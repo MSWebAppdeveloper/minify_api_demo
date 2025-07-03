@@ -11,6 +11,10 @@
         "tab": "API Reference",
         "groups": [
           {
+            "group": "API Documentation",
+            "pages": [ "api-reference/introduction" ]
+          },
+          {
             "group": "Customers",
             "pages": [
               "api-reference/customers/get-apicustomers",
