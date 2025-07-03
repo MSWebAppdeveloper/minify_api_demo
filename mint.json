@@ -4,6 +4,6 @@
     "openapi": "./openapi.yaml"
   },
   "branding": {
-    "projectName": "EzzyDoc API"
+    "projectName": "EzzyDoc  API"
   }
 }
