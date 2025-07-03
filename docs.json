@@ -34,24 +34,28 @@
         "tab": "API Reference",
         "groups": [
           {
+            "group": "API Documentation",
+            "pages": ["api-reference/introduction"]
+          },
+          {
             "group": "Customers",
             "pages": [
-              "api-reference\\customers\\get-apicustomers",
-              "api-reference\\customers\\post-apicustomers",
-              "api-reference\\customers\\get-apicustomers-1",
-              "api-reference\\customers\\put-apicustomers",
-              "api-reference\\customers\\delete-apicustomers",
-              "api-reference\\customers\\get-apicustomerssearch",
-              "api-reference\\customers\\get-apicustomerscount"
+              "api-reference/customers/get-customers",
+              "api-reference/customers/post-customers",
+              "api-reference/customers/get-customers-1",
+              "api-reference/customers/put-customers",
+              "api-reference/customers/delete-customers",
+              "api-reference/customers/get-customerssearch",
+              "api-reference/customers/get-customerscount"
             ]
           },
           {
             "group": "Docs",
-            "pages": ["api-reference\\docs\\get-apidocsping"]
+            "pages": ["api-reference/docs/get-apidocsping"]
           },
           {
             "group": "WeatherForecast",
-            "pages": ["api-reference\\weatherforecast\\get-weatherforecast"]
+            "pages": ["api-reference/weatherforecast/get-weatherforecast"]
           }
         ]
       }
