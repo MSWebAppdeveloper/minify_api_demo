@@ -52,13 +52,6 @@
           {
             "group": "WeatherForecast",
             "pages": ["api-reference\\weatherforecast\\get-weatherforecast"]
-          },
-          {
-            "group": "Endpoints",
-            "openapi": {
-              "source": "/api-reference/openapi.yaml",
-              "directory": "api-reference"
-            }
           }
         ]
       }
