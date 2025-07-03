@@ -10,10 +10,10 @@
       {
         "tab": "API Reference",
         "groups": [
-          {
-            "group": "API reference",
-            "openapi": "openapi.json"
-          },
+          //{
+          //  "group": "API reference",
+          //  "openapi": "openapi.json"
+          //},
           {
             "group": "Customers",
             "pages": [
