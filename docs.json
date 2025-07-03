@@ -1,4 +1,10 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Ezzy Bills",
+  "colors": {
+    "primary": "#ff0000"
+  },
   "navigation": [
     {
       "group": "API reference",
