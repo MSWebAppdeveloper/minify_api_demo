@@ -1,9 +1,0 @@
-{
-  "root": "/docs",
-  "api": {
-    "openapi": "./openapi.yaml"
-  },
-  "branding": {
-    "projectName": "EzzyDoc  API"
-  }
-}
