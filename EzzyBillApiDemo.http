@@ -1,0 +1,6 @@
+@EzzyBillApiDemo_HostAddress = http://localhost:5287
+
+GET {{EzzyBillApiDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
