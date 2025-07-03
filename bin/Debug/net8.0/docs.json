@@ -1,0 +1,45 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Ezzy Bills",
+  "colors": {
+    "primary": "#ff0000"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": [ "api-reference/introduction" ]
+          },
+          {
+            "group": "Customers",
+            "pages": [
+              "api-reference/customers/get-customers",
+              "api-reference/customers/post-customers",
+              "api-reference/customers/get-customers-1",
+              "api-reference/customers/put-customers",
+              "api-reference/customers/delete-customers",
+              "api-reference/customers/get-customerssearch",
+              "api-reference/customers/get-customerscount"
+            ]
+          },
+          {
+            "group": "Docs",
+            "pages": [
+              "api-reference/docs/get-docsping"
+            ]
+          },
+          {
+            "group": "WeatherForecast",
+            "pages": [
+              "api-reference/weatherforecast/get-weatherforecast"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

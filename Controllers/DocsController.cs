@@ -11,5 +11,11 @@ namespace EzzyBillApiDemo.Controllers
         {
             return Ok(new { message = "API is working 🚀" });
         }
+
+        [HttpGet("stop")]
+        public IActionResult Stop()
+        {
+            return Ok(new { message = "API is Stopped" });
+        }
     }
 }
