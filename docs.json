@@ -49,7 +49,7 @@
           {
             "group": "Endpoints",
             "openapi": {
-              "source": "/api-reference/openapi.yaml",
+              "source": "/api-reference/openapi.json",
               "directory": "api-reference"
             }
           }
