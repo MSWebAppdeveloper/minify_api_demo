@@ -24,19 +24,19 @@
           {
             "group": "Customers",
             "pages": [
-              "api-reference/customers/get-customers",
-              "api-reference/customers/post-customers",
-              "api-reference/customers/get-customers-1",
-              "api-reference/customers/put-customers",
-              "api-reference/customers/delete-customers",
-              "api-reference/customers/get-customerssearch",
-              "api-reference/customers/get-customerscount"
+              "api-reference/customers/get-apicustomers",
+              "api-reference/customers/post-apicustomers",
+              "api-reference/customers/get-apicustomers-1",
+              "api-reference/customers/put-apicustomers",
+              "api-reference/customers/delete-apicustomers",
+              "api-reference/customers/get-apicustomerssearch",
+              "api-reference/customers/get-apicustomerscount"
             ]
           },
           {
             "group": "Docs",
             "pages": [
-              "api-reference/docs/get-docsping"
+              "api-reference/docs/get-apidocsping"
             ]
           },
           {
