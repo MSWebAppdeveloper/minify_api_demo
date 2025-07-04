@@ -31,6 +31,18 @@
         ]
       },
       {
+        "tab": "Ezzy RestAPI",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "openapi": {
+              "source": "/api-reference/openapi.yaml",
+              "directory": "api-reference"
+            }
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
@@ -56,18 +68,6 @@
           {
             "group": "WeatherForecast",
             "pages": ["api-reference/weatherforecast/get-weatherforecast"]
-          }
-        ]
-      },
-      {
-        "tab": "Ezzy RestAPI",
-        "groups": [
-          {
-            "group": "Endpoints",
-            "openapi": {
-              "source": "/api-reference/openapi.yaml",
-              "directory": "api-reference"
-            }
           }
         ]
       }
