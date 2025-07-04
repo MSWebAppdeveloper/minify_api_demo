@@ -3,6 +3,1546 @@ info:
   title: EzzyRest API
   version: 1.0.0
 paths:
+  /Login:
+    get:
+      summary: "Login"
+      operationId: "Login"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: pwd
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /Login2FA:
+    get:
+      summary: "Login2FA"
+      operationId: "Login2FA"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: pwd
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /LoginOld:
+    get:
+      summary: "LoginOld"
+      operationId: "LoginOld"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: pwd
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /LoginDevice:
+    get:
+      summary: "LoginDevice"
+      operationId: "LoginDevice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /LoginToken:
+    get:
+      summary: "LoginToken"
+      operationId: "LoginToken"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: webhooktoken
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /LoginToken2:
+    get:
+      summary: "LoginToken2"
+      operationId: "LoginToken2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: registertoken
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /LoginApprover:
+    get:
+      summary: "LoginApprover"
+      operationId: "LoginApprover"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: approvaltoken
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyInvoiceQueue:
+    get:
+      summary: "getMyInvoiceQueue"
+      operationId: "getMyInvoiceQueue"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceQueueSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyItemsFilter:
+    get:
+      summary: "getMyItemsFilter"
+      operationId: "getMyItemsFilter"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemFilterListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getTracking2:
+    get:
+      summary: "getTracking2"
+      operationId: "getTracking2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getTrackingFiltered:
+    get:
+      summary: "getTrackingFiltered"
+      operationId: "getTrackingFiltered"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getTrackingFiltered2:
+    get:
+      summary: "getTrackingFiltered2"
+      operationId: "getTrackingFiltered2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceHeaderBlocks:
+    get:
+      summary: "getInvoiceHeaderBlocks"
+      operationId: "getInvoiceHeaderBlocks"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceBlocksSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceRows:
+    get:
+      summary: "getInvoiceRows"
+      operationId: "getInvoiceRows"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceRowsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /searchInvoices:
+    get:
+      summary: "searchInvoices"
+      operationId: "searchInvoices"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: search_tag
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: includedeleted
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchInvoiceSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /searchInvoicesPaged:
+    get:
+      summary: "searchInvoicesPaged"
+      operationId: "searchInvoicesPaged"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: search_tag
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: includedeleted
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: count
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: statefilter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchInvoiceSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /addLearningCorrection:
+    get:
+      summary: "addLearningCorrection"
+      operationId: "addLearningCorrection"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: field
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: newvalue
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: hint
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceDetails:
+    get:
+      summary: "getInvoiceDetails"
+      operationId: "getInvoiceDetails"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getEmailMessage:
+    get:
+      summary: "getEmailMessage"
+      operationId: "getEmailMessage"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailMessageSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /mySettingsForm:
+    get:
+      summary: "mySettingsForm"
+      operationId: "mySettingsForm"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettingsFormSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /createMyUser:
+    get:
+      summary: "createMyUser"
+      operationId: "createMyUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: usertype
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /loginMyUser:
+    get:
+      summary: "loginMyUser"
+      operationId: "loginMyUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /loginMyUserDebug:
+    get:
+      summary: "loginMyUserDebug"
+      operationId: "loginMyUserDebug"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getParts:
+    get:
+      summary: "getParts"
+      operationId: "getParts"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoicePartsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getContacts:
+    get:
+      summary: "getContacts"
+      operationId: "getContacts"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getContacts2:
+    get:
+      summary: "getContacts2"
+      operationId: "getContacts2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getContactsPaged:
+    get:
+      summary: "getContactsPaged"
+      operationId: "getContactsPaged"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactDetailsPagedSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getContactsPagedFilter:
+    get:
+      summary: "getContactsPagedFilter"
+      operationId: "getContactsPagedFilter"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: page_size
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: ascending
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: customertype
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContactDetailsPagedSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getGLCodes2:
+    get:
+      summary: "getGLCodes2"
+      operationId: "getGLCodes2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GLCodeInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getGLCodes3:
+    get:
+      summary: "getGLCodes3"
+      operationId: "getGLCodes3"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GLCodeInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getWorkflows:
+    get:
+      summary: "getWorkflows"
+      operationId: "getWorkflows"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyWorkflowsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getWorkflowSettings:
+    get:
+      summary: "getWorkflowSettings"
+      operationId: "getWorkflowSettings"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowSettings'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getPurchaseOrders:
+    get:
+      summary: "getPurchaseOrders"
+      operationId: "getPurchaseOrders"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrderSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getFormData:
+    get:
+      summary: "getFormData"
+      operationId: "getFormData"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormDataSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyPrice:
+    get:
+      summary: "getMyPrice"
+      operationId: "getMyPrice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: part
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: customer
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerPriceSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /addLearning:
+    get:
+      summary: "addLearning"
+      operationId: "addLearning"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: field
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: newvalue
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: hint
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /logOut:
+    get:
+      summary: "logOut"
+      operationId: "logOut"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getLogo:
+    get:
+      summary: "getLogo"
+      operationId: "getLogo"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/logoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /addLicense:
+    get:
+      summary: "addLicense"
+      operationId: "addLicense"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/string'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /checkLicense:
+    get:
+      summary: "checkLicense"
+      operationId: "checkLicense"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/string'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /updateLicenseUsage:
+    get:
+      summary: "updateLicenseUsage"
+      operationId: "updateLicenseUsage"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: usage
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/string'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /heartBeat:
+    get:
+      summary: "heartBeat"
+      operationId: "heartBeat"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/string'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getDocumentClassification:
+    get:
+      summary: "getDocumentClassification"
+      operationId: "getDocumentClassification"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentClassificationSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /workflowStatus:
+    get:
+      summary: "workflowStatus"
+      operationId: "workflowStatus"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyEnterpriseUsage:
+    get:
+      summary: "MyEnterpriseUsage"
+      operationId: "MyEnterpriseUsage"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnerpiseUsageSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyEnterpriseUsageGrouped:
+    get:
+      summary: "MyEnterpriseUsageGrouped"
+      operationId: "MyEnterpriseUsageGrouped"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnerpiseUsageSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyEnterpriseUsageDetailed:
+    get:
+      summary: "MyEnterpriseUsageDetailed"
+      operationId: "MyEnterpriseUsageDetailed"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EnerpiseUsageSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /moveToRecycleBin:
+    get:
+      summary: "moveToRecycleBin"
+      operationId: "moveToRecycleBin"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /switchUser:
+    get:
+      summary: "switchUser"
+      operationId: "switchUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /customerSettings:
+    get:
+      summary: "customerSettings"
+      operationId: "customerSettings"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSettingsFormSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getWorkflowPair:
+    get:
+      summary: "getWorkflowPair"
+      operationId: "getWorkflowPair"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowPairSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getUserFromDomain:
+    get:
+      summary: "getUserFromDomain"
+      operationId: "getUserFromDomain"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: domain
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NameSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /myCustomersCustomerSettings:
+    get:
+      summary: "myCustomersCustomerSettings"
+      operationId: "myCustomersCustomerSettings"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: customerName
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerSettingsFormSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyCustomers:
+    get:
+      summary: "getMyCustomers"
+      operationId: "getMyCustomers"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyCustomerNameSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /logInvoice:
+    get:
+      summary: "logInvoice"
+      operationId: "logInvoice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: log
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /customerOrders:
+    get:
+      summary: "customerOrders"
+      operationId: "customerOrders"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerOrdersSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /myCustomerOrders:
+    get:
+      summary: "myCustomerOrders"
+      operationId: "myCustomerOrders"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerOrdersSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /myCustomersCustomerOrders:
+    get:
+      summary: "myCustomersCustomerOrders"
+      operationId: "myCustomersCustomerOrders"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: customerName
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerOrdersSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /addAllContacts:
     post:
       summary: "addAllContacts"
@@ -163,6 +1703,56 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getUploadSAS:
+    get:
+      summary: "getUploadSAS"
+      operationId: "getUploadSAS"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filename
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlobURLSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAttachmentSAS:
+    get:
+      summary: "getAttachmentSAS"
+      operationId: "getAttachmentSAS"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filename
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlobURLSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -559,6 +2149,599 @@ paths:
         '500':
           description: Internal Server Error
 
+  /removeContacts:
+    get:
+      summary: "removeContacts"
+      operationId: "removeContacts"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /finishReview:
+    get:
+      summary: "finishReview"
+      operationId: "finishReview"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /saveLabel2:
+    get:
+      summary: "saveLabel2"
+      operationId: "saveLabel2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceLabel:
+    get:
+      summary: "getInvoiceLabel"
+      operationId: "getInvoiceLabel"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NameSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getSubscriptionDate:
+    get:
+      summary: "getSubscriptionDate"
+      operationId: "getSubscriptionDate"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approve:
+    get:
+      summary: "approve"
+      operationId: "approve"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: total
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tax
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approve2:
+    get:
+      summary: "approve2"
+      operationId: "approve2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: total
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tax
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: charge
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approve3:
+    get:
+      summary: "approve3"
+      operationId: "approve3"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: total
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tax
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: charge
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: ponumber
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: glcode
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approveInvoice:
+    get:
+      summary: "approveInvoice"
+      operationId: "approveInvoice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approve4:
+    get:
+      summary: "approve4"
+      operationId: "approve4"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: total
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tax
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: charge
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: ponumber
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: glcode
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoicedate
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /approve5:
+    get:
+      summary: "approve5"
+      operationId: "approve5"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: total
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tax
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: charge
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: ponumber
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: glcode
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoicedate
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tracking
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /rejectInvoice:
+    get:
+      summary: "rejectInvoice"
+      operationId: "rejectInvoice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /cancelApproveInvoice:
+    get:
+      summary: "cancelApproveInvoice"
+      operationId: "cancelApproveInvoice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /changeInvoiceApprover:
+    get:
+      summary: "changeInvoiceApprover"
+      operationId: "changeInvoiceApprover"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: emailto
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyMatchedPOData:
+    get:
+      summary: "MyMatchedPOData"
+      operationId: "MyMatchedPOData"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/POMatchedSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /finishExternalTask:
+    get:
+      summary: "finishExternalTask"
+      operationId: "finishExternalTask"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /saveInvoiceRows:
     post:
       summary: "saveInvoiceRows"
@@ -580,6 +2763,280 @@ paths:
               items:
                 $ref: '#/components/schemas/InvoiceTableRow'
             example: { exampleField: 'sample' }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /restartWorkflow2:
+    get:
+      summary: "restartWorkflow2"
+      operationId: "restartWorkflow2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /restartWorkflowAndMoveToNext:
+    get:
+      summary: "restartWorkflowAndMoveToNext"
+      operationId: "restartWorkflowAndMoveToNext"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /logInvoiceStatus:
+    get:
+      summary: "logInvoiceStatus"
+      operationId: "logInvoiceStatus"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: log
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /logandUpdateInvoiceStatus:
+    get:
+      summary: "logandUpdateInvoiceStatus"
+      operationId: "logandUpdateInvoiceStatus"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: log
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceColumns:
+    get:
+      summary: "getInvoiceColumns"
+      operationId: "getInvoiceColumns"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceColumnsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getLogDetails:
+    get:
+      summary: "getLogDetails"
+      operationId: "getLogDetails"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMySuppliersFilter:
+    get:
+      summary: "getMySuppliersFilter"
+      operationId: "getMySuppliersFilter"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupplierFilterListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMySuppliersFilter2:
+    get:
+      summary: "getMySuppliersFilter2"
+      operationId: "getMySuppliersFilter2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupplierFilterListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /registerNewUser5:
+    get:
+      summary: "registerNewUser5"
+      operationId: "registerNewUser5"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: UserName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: inviteUser
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Password
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: registerType
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: phone
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: hear_about_us
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: contact_name
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Success
@@ -662,6 +3119,99 @@ paths:
         '500':
           description: Internal Server Error
 
+  /getUser:
+    get:
+      summary: "getUser"
+      operationId: "getUser"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user2SS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getExportTargetList:
+    get:
+      summary: "getExportTargetList"
+      operationId: "getExportTargetList"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportTargetListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /resetPassword:
+    get:
+      summary: "resetPassword"
+      operationId: "resetPassword"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/int'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /setSupplier:
+    get:
+      summary: "setSupplier"
+      operationId: "setSupplier"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /saveMySettingsForm:
     post:
       summary: "saveMySettingsForm"
@@ -682,6 +3232,63 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /subscriptionDetails:
+    get:
+      summary: "subscriptionDetails"
+      operationId: "subscriptionDetails"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /allMyWorkflows:
+    get:
+      summary: "allMyWorkflows"
+      operationId: "allMyWorkflows"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyWorkflowsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getApproverList:
+    get:
+      summary: "getApproverList"
+      operationId: "getApproverList"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApproverListSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -709,6 +3316,268 @@ paths:
               items:
                 $ref: '#/components/schemas/ApproverDetails'
             example: { exampleField: 'sample' }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceHeaderBlocksTableExclusive:
+    get:
+      summary: "getInvoiceHeaderBlocksTableExclusive"
+      operationId: "getInvoiceHeaderBlocksTableExclusive"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceBlocks2SS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyUsers:
+    get:
+      summary: "MyUsers"
+      operationId: "MyUsers"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyUsersSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /generatePasscodeURL:
+    get:
+      summary: "generatePasscodeURL"
+      operationId: "generatePasscodeURL"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PassCodeURLSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /switchToUser:
+    get:
+      summary: "switchToUser"
+      operationId: "switchToUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /enable2FA:
+    get:
+      summary: "enable2FA"
+      operationId: "enable2FA"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /enable2FAHQUser:
+    get:
+      summary: "enable2FAHQUser"
+      operationId: "enable2FAHQUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: code
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /generate2FA:
+    get:
+      summary: "generate2FA"
+      operationId: "generate2FA"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TwoFASS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /generate2FAHQuser:
+    get:
+      summary: "generate2FAHQuser"
+      operationId: "generate2FAHQuser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TwoFASS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyUsers2:
+    get:
+      summary: "MyUsers2"
+      operationId: "MyUsers2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyUsersSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getPurchaseHistory:
+    get:
+      summary: "getPurchaseHistory"
+      operationId: "getPurchaseHistory"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseHistorySS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /cancelSubscription:
+    get:
+      summary: "cancelSubscription"
+      operationId: "cancelSubscription"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Success
@@ -803,6 +3672,160 @@ paths:
         '500':
           description: Internal Server Error
 
+  /connectedApps:
+    get:
+      summary: "connectedApps"
+      operationId: "connectedApps"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnectedAppsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAuthorizationURL:
+    get:
+      summary: "getAuthorizationURL"
+      operationId: "getAuthorizationURL"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationURLSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /disconnectConnection:
+    get:
+      summary: "disconnectConnection"
+      operationId: "disconnectConnection"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /checkConnection:
+    get:
+      summary: "checkConnection"
+      operationId: "checkConnection"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /SendModifyInvoiceEmail:
+    get:
+      summary: "SendModifyInvoiceEmail"
+      operationId: "SendModifyInvoiceEmail"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: heading
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: message
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /isLoggedIn:
+    get:
+      summary: "isLoggedIn"
+      operationId: "isLoggedIn"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getEmailRuleTable:
+    get:
+      summary: "getEmailRuleTable"
+      operationId: "getEmailRuleTable"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailRuleTableSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /saveEmailRuleTable:
     post:
       summary: "saveEmailRuleTable"
@@ -825,6 +3848,80 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyUsersList:
+    get:
+      summary: "getMyUsersList"
+      operationId: "getMyUsersList"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyGroupsUsage:
+    get:
+      summary: "MyGroupsUsage"
+      operationId: "MyGroupsUsage"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: showdisabled
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyGroupsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyGroupsUsers:
+    get:
+      summary: "MyGroupsUsers"
+      operationId: "MyGroupsUsers"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: showdisabled
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyGroupsSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -889,6 +3986,31 @@ paths:
         '500':
           description: Internal Server Error
 
+  /HQUserSettings:
+    get:
+      summary: "HQUserSettings"
+      operationId: "HQUserSettings"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettingsFormSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /saveHQUser:
     post:
       summary: "saveHQUser"
@@ -908,6 +4030,499 @@ paths:
             schema:
               $ref: '#/components/schemas/UserDetails'
             example: { exampleField: 'sample' }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /moveToGroup:
+    get:
+      summary: "moveToGroup"
+      operationId: "moveToGroup"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: group
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getSubscriptionDateEnterprise:
+    get:
+      summary: "getSubscriptionDateEnterprise"
+      operationId: "getSubscriptionDateEnterprise"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /subscriptionDetailsEnterprise:
+    get:
+      summary: "subscriptionDetailsEnterprise"
+      operationId: "subscriptionDetailsEnterprise"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /renameUser:
+    get:
+      summary: "renameUser"
+      operationId: "renameUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: value
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /removeGroup:
+    get:
+      summary: "removeGroup"
+      operationId: "removeGroup"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /registerHQUser:
+    get:
+      summary: "registerHQUser"
+      operationId: "registerHQUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceLog:
+    get:
+      summary: "getInvoiceLog"
+      operationId: "getInvoiceLog"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceLogSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /AddUserToGroup:
+    get:
+      summary: "AddUserToGroup"
+      operationId: "AddUserToGroup"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: group
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /AddGroupToEnterprise:
+    get:
+      summary: "AddGroupToEnterprise"
+      operationId: "AddGroupToEnterprise"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: user
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getWorkflowDetails:
+    get:
+      summary: "getWorkflowDetails"
+      operationId: "getWorkflowDetails"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowDetailsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /allQueueStates:
+    get:
+      summary: "allQueueStates"
+      operationId: "allQueueStates"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueueStatesSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /allMyExternalTasks:
+    get:
+      summary: "allMyExternalTasks"
+      operationId: "allMyExternalTasks"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExternalQueueStateSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /activateWorkflow:
+    get:
+      summary: "activateWorkflow"
+      operationId: "activateWorkflow"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /copyWorkflow:
+    get:
+      summary: "copyWorkflow"
+      operationId: "copyWorkflow"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /updateWorkflow:
+    get:
+      summary: "updateWorkflow"
+      operationId: "updateWorkflow"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: newname
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /deleteWorkflow:
+    get:
+      summary: "deleteWorkflow"
+      operationId: "deleteWorkflow"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /addExternalTask:
+    get:
+      summary: "addExternalTask"
+      operationId: "addExternalTask"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: description
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: webhook
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: settings
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: example
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /deleteExternalTask:
+    get:
+      summary: "deleteExternalTask"
+      operationId: "deleteExternalTask"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Success
@@ -945,6 +4560,692 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getPlanQuotaAndCost:
+    get:
+      summary: "getPlanQuotaAndCost"
+      operationId: "getPlanQuotaAndCost"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanQuotaSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getDevelopmentPlanQuotaAndCost:
+    get:
+      summary: "getDevelopmentPlanQuotaAndCost"
+      operationId: "getDevelopmentPlanQuotaAndCost"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanQuotaSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /switchWorkflow2:
+    get:
+      summary: "switchWorkflow2"
+      operationId: "switchWorkflow2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowStateSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /ValidateAndAddExistingUserToGroup:
+    get:
+      summary: "ValidateAndAddExistingUserToGroup"
+      operationId: "ValidateAndAddExistingUserToGroup"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: group
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /ValidateaAndAddExistingGroupToEnterprise:
+    get:
+      summary: "ValidateaAndAddExistingGroupToEnterprise"
+      operationId: "ValidateaAndAddExistingGroupToEnterprise"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: group
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /returnAllToWorkflow:
+    get:
+      summary: "returnAllToWorkflow"
+      operationId: "returnAllToWorkflow"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HandLExportSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllInvoiceBlocks:
+    get:
+      summary: "getAllInvoiceBlocks"
+      operationId: "getAllInvoiceBlocks"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceBlocksSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /refreshGLCache:
+    get:
+      summary: "refreshGLCache"
+      operationId: "refreshGLCache"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /upgradeToHQ:
+    get:
+      summary: "upgradeToHQ"
+      operationId: "upgradeToHQ"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /createAPIKey:
+    get:
+      summary: "createAPIKey"
+      operationId: "createAPIKey"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIKeySS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /addWorkTask:
+    get:
+      summary: "addWorkTask"
+      operationId: "addWorkTask"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getSystemWorkflows:
+    get:
+      summary: "getSystemWorkflows"
+      operationId: "getSystemWorkflows"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyWorkflowsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /gmailConnect:
+    get:
+      summary: "gmailConnect"
+      operationId: "gmailConnect"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OauthEmailSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /o365Connect:
+    get:
+      summary: "o365Connect"
+      operationId: "o365Connect"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OauthEmailSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getTrackingFiltered3:
+    get:
+      summary: "getTrackingFiltered3"
+      operationId: "getTrackingFiltered3"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getExportTarget3:
+    get:
+      summary: "getExportTarget3"
+      operationId: "getExportTarget3"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportTargetSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMySwitchWorkflows2:
+    get:
+      summary: "getMySwitchWorkflows2"
+      operationId: "getMySwitchWorkflows2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyWorkflowsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getFormDataTOK:
+    get:
+      summary: "getFormDataTOK"
+      operationId: "getFormDataTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormDataSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getWorktaskStatus:
+    get:
+      summary: "getWorktaskStatus"
+      operationId: "getWorktaskStatus"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: taskid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorktaskStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /createNewWorkflow:
+    get:
+      summary: "createNewWorkflow"
+      operationId: "createNewWorkflow"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /createNewWorkflow2:
+    get:
+      summary: "createNewWorkflow2"
+      operationId: "createNewWorkflow2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyApprovalGuid2:
+    get:
+      summary: "getMyApprovalGuid2"
+      operationId: "getMyApprovalGuid2"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyApprovalGuidSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /notJunkEmail:
+    get:
+      summary: "notJunkEmail"
+      operationId: "notJunkEmail"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getRegisterStatus:
+    get:
+      summary: "getRegisterStatus"
+      operationId: "getRegisterStatus"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: taskid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorktaskStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /checkConnectionFull:
+    get:
+      summary: "checkConnectionFull"
+      operationId: "checkConnectionFull"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /finishFormTOK:
+    get:
+      summary: "finishFormTOK"
+      operationId: "finishFormTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /inviteUser:
+    get:
+      summary: "inviteUser"
+      operationId: "inviteUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: username
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /changePlan:
+    get:
+      summary: "changePlan"
+      operationId: "changePlan"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: plan
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMySuppliersFilterTOK:
+    get:
+      summary: "getMySuppliersFilterTOK"
+      operationId: "getMySuppliersFilterTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupplierFilterListSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -990,6 +5291,135 @@ paths:
         '500':
           description: Internal Server Error
 
+  /insertPlaceHolderDocumentTOK:
+    get:
+      summary: "insertPlaceHolderDocumentTOK"
+      operationId: "insertPlaceHolderDocumentTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /customApps:
+    get:
+      summary: "customApps"
+      operationId: "customApps"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomAppsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllInvoicesTOK:
+    get:
+      summary: "getAllInvoicesTOK"
+      operationId: "getAllInvoicesTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: supplier
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceListSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getInvoiceLinesTOK:
+    get:
+      summary: "getInvoiceLinesTOK"
+      operationId: "getInvoiceLinesTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceRows2SS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /setDocumentType:
+    get:
+      summary: "setDocumentType"
+      operationId: "setDocumentType"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /updateFormAndTable:
     post:
       summary: "updateFormAndTable"
@@ -1009,6 +5439,240 @@ paths:
             schema:
               $ref: '#/components/schemas/FormAndRows'
             example: { exampleField: 'sample' }
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /MyUsageHistory:
+    get:
+      summary: "MyUsageHistory"
+      operationId: "MyUsageHistory"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsageMonthlySS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllTrackingTOK:
+    get:
+      summary: "getAllTrackingTOK"
+      operationId: "getAllTrackingTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TrackingInfoSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllStorageDevicesTOK:
+    get:
+      summary: "getAllStorageDevicesTOK"
+      operationId: "getAllStorageDevicesTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StorageDevicesSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllStatementReconciliationsTOK:
+    get:
+      summary: "getAllStatementReconciliationsTOK"
+      operationId: "getAllStatementReconciliationsTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatementReconciliationSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /reclassifyAsInvoice:
+    get:
+      summary: "reclassifyAsInvoice"
+      operationId: "reclassifyAsInvoice"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAllMyInvoiceQueueTOK:
+    get:
+      summary: "getAllMyInvoiceQueueTOK"
+      operationId: "getAllMyInvoiceQueueTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: size
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: filter
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: showall
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceQueueSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /registerNewUser6:
+    get:
+      summary: "registerNewUser6"
+      operationId: "registerNewUser6"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: UserName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: inviteUser
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Password
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: registerType
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: phone
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: hear_about_us
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: contact_name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: province
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Success
@@ -1059,6 +5723,105 @@ paths:
         '500':
           description: Internal Server Error
 
+  /deleteLearningRuleTOK:
+    get:
+      summary: "deleteLearningRuleTOK"
+      operationId: "deleteLearningRuleTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /deleteExternalApp:
+    get:
+      summary: "deleteExternalApp"
+      operationId: "deleteExternalApp"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: formid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /removeLabel:
+    get:
+      summary: "removeLabel"
+      operationId: "removeLabel"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoicelist
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getConsoleLog:
+    get:
+      summary: "getConsoleLog"
+      operationId: "getConsoleLog"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsoleLogSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /writeConsoleLog:
     post:
       summary: "writeConsoleLog"
@@ -1078,6 +5841,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAIPrompts:
+    get:
+      summary: "getAIPrompts"
+      operationId: "getAIPrompts"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: prompt
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptsSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -1173,6 +5961,36 @@ paths:
         '500':
           description: Internal Server Error
 
+  /getAIPromptsTOK:
+    get:
+      summary: "getAIPromptsTOK"
+      operationId: "getAIPromptsTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: prompt
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPromptsSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /renameExternalTask:
     post:
       summary: "renameExternalTask"
@@ -1197,6 +6015,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getMyAttachments2:
+    get:
+      summary: "getMyAttachments2"
+      operationId: "getMyAttachments2"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvoiceQueueSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -1229,6 +6072,172 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /removeHQUser:
+    get:
+      summary: "removeHQUser"
+      operationId: "removeHQUser"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /customPurchases:
+    get:
+      summary: "customPurchases"
+      operationId: "customPurchases"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomPurchaseSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /registerHQUserEmail:
+    get:
+      summary: "registerHQUserEmail"
+      operationId: "registerHQUserEmail"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: Email
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /registerHQUserComplete:
+    get:
+      summary: "registerHQUserComplete"
+      operationId: "registerHQUserComplete"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: registertoken
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: UserName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Email
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: Password
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getCustomSettingsDataFields:
+    get:
+      summary: "getCustomSettingsDataFields"
+      operationId: "getCustomSettingsDataFields"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomSettingDataFieldSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getAISupportedFunctions:
+    get:
+      summary: "getAISupportedFunctions"
+      operationId: "getAISupportedFunctions"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AISupportedFunctionSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getGLCodes4:
+    get:
+      summary: "getGLCodes4"
+      operationId: "getGLCodes4"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GLCodeInfoSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -1316,6 +6325,31 @@ paths:
         '500':
           description: Internal Server Error
 
+  /getAIResult:
+    get:
+      summary: "getAIResult"
+      operationId: "getAIResult"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIResultSS'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
   /getAILearningRules:
     post:
       summary: "getAILearningRules"
@@ -1366,6 +6400,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
+
+  /getExportTarget:
+    get:
+      summary: "getExportTarget"
+      operationId: "getExportTarget"
+      tags:
+        - EzzyRest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExportTargetSS'
               example: { status: 'ok' }
         '400':
           description: Bad Request
@@ -1492,7 +6545,152 @@ paths:
 
 components:
   schemas:
+    int:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceQueueSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ItemFilterListSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    TrackingInfoSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceBlocksSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceRowsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SearchInvoiceSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     Servicestatus:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceDetailsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    EmailMessageSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SettingsFormSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoicePartsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ContactDetailsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ContactDetailsPagedSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    GLCodeInfoSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    MyWorkflowsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorkflowSettings:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    PurchaseOrderSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    FormDataSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomerPriceSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    logoSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    string:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    DocumentClassificationSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorkflowStatusSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    EnerpiseUsageSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomerSettingsFormSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorkflowPairSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    NameSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    MyCustomerNameSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomerOrdersSS:
       type: object
       properties:
         exampleField:
@@ -1508,6 +6706,11 @@ components:
         exampleField:
           type: string
     PictureFileSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    BlobURLSS:
       type: object
       properties:
         exampleField:
@@ -1547,7 +6750,32 @@ components:
       properties:
         exampleField:
           type: string
+    SubscriptionStatusSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    POMatchedSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     InvoiceTableRow:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceColumnsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    LogDetailsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SupplierFilterListSS:
       type: object
       properties:
         exampleField:
@@ -1557,7 +6785,27 @@ components:
       properties:
         exampleField:
           type: string
+    user2SS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ExportTargetListSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     SettingsForm:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SubscriptionDetailsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ApproverListSS:
       type: object
       properties:
         exampleField:
@@ -1567,7 +6815,57 @@ components:
       properties:
         exampleField:
           type: string
+    InvoiceBlocks2SS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    MyUsersSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    PassCodeURLSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    TwoFASS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    PurchaseHistorySS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ConnectedAppsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AuthorizationURLSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    EmailRuleTableSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     RuleRow:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    UserListSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    MyGroupsSS:
       type: object
       properties:
         exampleField:
@@ -1577,7 +6875,67 @@ components:
       properties:
         exampleField:
           type: string
+    InvoiceLogSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorkflowDetailsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    QueueStatesSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ExternalQueueStateSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     Workflowstatus:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    PlanQuotaSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorkflowStateSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    HandLExportSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    APIKeySS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    OauthEmailSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ExportTargetSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    WorktaskStatusSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    MyApprovalGuidSS:
       type: object
       properties:
         exampleField:
@@ -1587,7 +6945,47 @@ components:
       properties:
         exampleField:
           type: string
+    CustomAppsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceListSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceRows2SS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     FormAndRows:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    UsageMonthlySS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    StorageDevicesSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    StatementReconciliationSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ConsoleLogSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AIPromptsSS:
       type: object
       properties:
         exampleField:
@@ -1612,6 +7010,21 @@ components:
       properties:
         exampleField:
           type: string
+    CustomPurchaseSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomSettingDataFieldSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AISupportedFunctionSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
     SupportTicketSS:
       type: object
       properties:
@@ -1628,6 +7041,11 @@ components:
         exampleField:
           type: string
     SupportTicketEmailSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AIResultSS:
       type: object
       properties:
         exampleField:
