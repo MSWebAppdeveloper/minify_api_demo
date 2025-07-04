@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EzzyBillApiDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abee0d1c393ee3005410fc6b992c1d4cca8b557f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b2e2ef63f1d91535e7cf6dabb13aed10511fabc")]
 [assembly: System.Reflection.AssemblyProductAttribute("EzzyBillApiDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EzzyBillApiDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
