@@ -281,6 +281,18 @@
         }
       }
     },
+    "/api/Docs/stop": {
+      "get": {
+        "tags": [
+          "Docs"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [

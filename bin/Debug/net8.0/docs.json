@@ -15,28 +15,11 @@
             "pages": [ "api-reference/introduction" ]
           },
           {
-            "group": "Customers",
-            "pages": [
-              "api-reference/customers/get-customers",
-              "api-reference/customers/post-customers",
-              "api-reference/customers/get-customers-1",
-              "api-reference/customers/put-customers",
-              "api-reference/customers/delete-customers",
-              "api-reference/customers/get-customerssearch",
-              "api-reference/customers/get-customerscount"
-            ]
-          },
-          {
-            "group": "Docs",
-            "pages": [
-              "api-reference/docs/get-docsping"
-            ]
-          },
-          {
-            "group": "WeatherForecast",
-            "pages": [
-              "api-reference/weatherforecast/get-weatherforecast"
-            ]
+            "group": "Endpoints",
+            "openapi": {
+              "source": "http://localhost:5000/swagger/v1/swagger.json",
+              "directory": "api-reference"
+            }
           }
         ]
       }

@@ -284,4 +284,4 @@ C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\obj\Debug\net8.0\Ezzy
 C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\obj\Debug\net8.0\EzzyBillApiDemo.genruntimeconfig.cache
 C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\obj\Debug\net8.0\ref\EzzyBillApiDemo.dll
 C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\bin\Debug\net8.0\docs.json
-C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\bin\Debug\net8.0\openapi.json
+C:\Users\DELL\source\repos\EzzyBillApiDemo\EzzyBillApiDemo\bin\Debug\net8.0\api-reference\openapi.json
