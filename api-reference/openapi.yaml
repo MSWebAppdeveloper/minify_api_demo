@@ -1,249 +1,1629 @@
 ﻿openapi: 3.0.1
 info:
-  title: EzzyBillApiDemo
-  version: '1.0'
+  title: EzzyRest API
+  version: 1.0.0
 paths:
-  /api/Customers:
-    get:
-      tags:
-        - Customers
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
-            text/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
+  /addAllContacts:
     post:
-      tags:
-        - Customers
+      summary: "addAllContacts"
+      operationId: "addAllContacts"
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Customer'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Customer'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Customer'
+              type: array
+              items:
+                $ref: '#/components/schemas/ContactDetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
       responses:
         '200':
-          description: OK
+          description: Success
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Customer'
             application/json:
               schema:
-                $ref: '#/components/schemas/Customer'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Customer'
-  /api/Customers/{id}:
-    get:
-      tags:
-        - Customers
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/Customer'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Customer'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/Customer'
-    put:
-      tags:
-        - Customers
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addContacts?target={target}:
+    post:
+      summary: "addContacts"
+      operationId: "addContacts"
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Customer'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/Customer'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/Customer'
+              type: array
+              items:
+                $ref: '#/components/schemas/ContactDetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
       responses:
         '200':
-          description: OK
-    delete:
-      tags:
-        - Customers
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-            format: int32
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updateContacts?target={target}:
+    post:
+      summary: "updateContacts"
+      operationId: "updateContacts"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ContactDetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
       responses:
         '200':
-          description: OK
-  /api/Customers/search:
-    get:
-      tags:
-        - Customers
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addPurchaseOrders?target={target}:
+    post:
+      summary: "addPurchaseOrders"
+      operationId: "addPurchaseOrders"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PODetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /appendPurchaseOrders?target={target}:
+    post:
+      summary: "appendPurchaseOrders"
+      operationId: "appendPurchaseOrders"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PODetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadInvoiceImage:
+    post:
+      summary: "uploadInvoiceImage"
+      operationId: "uploadInvoiceImage"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadCustomerInvoiceImage:
+    post:
+      summary: "uploadCustomerInvoiceImage"
+      operationId: "uploadCustomerInvoiceImage"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadMyCustomersCustomerInvoiceImage:
+    post:
+      summary: "uploadMyCustomersCustomerInvoiceImage"
+      operationId: "uploadMyCustomersCustomerInvoiceImage"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerPictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addInvoicePayment:
+    post:
+      summary: "addInvoicePayment"
+      operationId: "addInvoicePayment"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/InvoiceEngine.InvoicePayment'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadAppImage?name={name}:
+    post:
+      summary: "uploadAppImage"
+      operationId: "uploadAppImage"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
       parameters:
         - name: name
           in: query
+          required: true
           schema:
             type: string
       responses:
         '200':
-          description: OK
+          description: Success
           content:
-            text/plain:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
-            text/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Customer'
-  /api/Customers/count:
-    get:
-      tags:
-        - Customers
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addWorkflowCSV?state={state}&workflowid={workflowid}&settings={settings}:
+    post:
+      summary: "addWorkflowCSV"
+      operationId: "addWorkflowCSV"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: settings
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: OK
+          description: Success
           content:
-            text/plain:
-              schema:
-                type: integer
-                format: int32
             application/json:
               schema:
-                type: integer
-                format: int32
-            text/json:
-              schema:
-                type: integer
-                format: int32
-  /api/Docs/ping:
-    get:
-      tags:
-        - Docs
+                $ref: '#/components/schemas/updateStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updateWorkflowCSV?invoiceid={invoiceid}&state={state}&workflowid={workflowid}&settings={settings}:
+    post:
+      summary: "updateWorkflowCSV"
+      operationId: "updateWorkflowCSV"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: settings
+          in: query
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: OK
-  /api/Docs/stop:
-    get:
-      tags:
-        - Docs
-      responses:
-        '200':
-          description: OK
-  /WeatherForecast:
-    get:
-      tags:
-        - WeatherForecast
-      operationId: GetWeatherForecast
-      responses:
-        '200':
-          description: OK
+          description: Success
           content:
-            text/plain:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/WeatherForecast'
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/WeatherForecast'
-            text/json:
+                $ref: '#/components/schemas/updateStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addLearningRule?invoiceid={invoiceid}:
+    post:
+      summary: "addLearningRule"
+      operationId: "addLearningRule"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.LearningRule'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/WeatherForecast'
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveCustomerSettings:
+    post:
+      summary: "saveCustomerSettings"
+      operationId: "saveCustomerSettings"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerSettingsForm'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updatePayment?UID={UID}&TID={TID}&target={target}&state={state}:
+    post:
+      summary: "updatePayment"
+      operationId: "updatePayment"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.PaymentState'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: UID
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: TID
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: target
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: state
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadPhoto:
+    post:
+      summary: "uploadPhoto"
+      operationId: "uploadPhoto"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uploadStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadPhotoReview:
+    post:
+      summary: "uploadPhotoReview"
+      operationId: "uploadPhotoReview"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uploadStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadPhotoWithNotes?notes={notes}&review={review}&locale={locale}:
+    post:
+      summary: "uploadPhotoWithNotes"
+      operationId: "uploadPhotoWithNotes"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: notes
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: review
+          in: query
+          required: true
+          schema:
+            type: boolean
+        - name: locale
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uploadStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveInvoiceRows?invoiceid={invoiceid}:
+    post:
+      summary: "saveInvoiceRows"
+      operationId: "saveInvoiceRows"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/InvoiceTableRow'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updateFormData?invoiceid={invoiceid}:
+    post:
+      summary: "updateFormData"
+      operationId: "updateFormData"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.FormData'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updateFormDataTOK?token={token}&invoiceid={invoiceid}:
+    post:
+      summary: "updateFormDataTOK"
+      operationId: "updateFormDataTOK"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.FormData'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveMySettingsForm:
+    post:
+      summary: "saveMySettingsForm"
+      operationId: "saveMySettingsForm"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettingsForm'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveApproverList?operation={operation}:
+    post:
+      summary: "saveApproverList"
+      operationId: "saveApproverList"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/ApproverDetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: operation
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /sendEmailWithAttachment?invoiceid={invoiceid}&emailto={emailto}&subject={subject}:
+    post:
+      summary: "sendEmailWithAttachment"
+      operationId: "sendEmailWithAttachment"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: emailto
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: subject
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /startApp?name={name}&settings={settings}:
+    post:
+      summary: "startApp"
+      operationId: "startApp"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: settings
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uploadStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveEmailRuleTable:
+    post:
+      summary: "saveEmailRuleTable"
+      operationId: "saveEmailRuleTable"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/RuleRow'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveHQSettingsForm:
+    post:
+      summary: "saveHQSettingsForm"
+      operationId: "saveHQSettingsForm"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettingsForm'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveHQUserSettings?name={name}:
+    post:
+      summary: "saveHQUserSettings"
+      operationId: "saveHQUserSettings"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettingsForm'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveHQUser?id={id}:
+    post:
+      summary: "saveHQUser"
+      operationId: "saveHQUser"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDetails'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveWorkflowSettings?workflowid={workflowid}:
+    post:
+      summary: "saveWorkflowSettings"
+      operationId: "saveWorkflowSettings"
+      parameters:
+        - name: workflowid
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: settings
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workflowstatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveInvoiceTableTOK?token={token}&invoiceid={invoiceid}:
+    post:
+      summary: "saveInvoiceTableTOK"
+      operationId: "saveInvoiceTableTOK"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/InvoiceRow'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /updateFormAndTable?invoiceid={invoiceid}:
+    post:
+      summary: "updateFormAndTable"
+      operationId: "updateFormAndTable"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FormAndRows'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addLearningRuleTOK?token={token}&invoiceid={invoiceid}:
+    post:
+      summary: "addLearningRuleTOK"
+      operationId: "addLearningRuleTOK"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.LearningRule'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /writeConsoleLog:
+    post:
+      summary: "writeConsoleLog"
+      operationId: "writeConsoleLog"
+      parameters:
+        - name: note
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /createAIPrompts:
+    post:
+      summary: "createAIPrompts"
+      operationId: "createAIPrompts"
+      parameters:
+        - name: prompt
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AICreatedSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /publishAIPrompt?name={name}:
+    post:
+      summary: "publishAIPrompt"
+      operationId: "publishAIPrompt"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AICreatedTask'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPublishedWorkflowSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /createAndPublishAIPromptTOK?token={token}:
+    post:
+      summary: "createAndPublishAIPromptTOK"
+      operationId: "createAndPublishAIPromptTOK"
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: prompt
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AIPublishedWorkflowSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /renameExternalTask?id={id}:
+    post:
+      summary: "renameExternalTask"
+      operationId: "renameExternalTask"
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /uploadInvoiceImage2?doc_type={doc_type}&tag={tag}:
+    post:
+      summary: "uploadInvoiceImage2"
+      operationId: "uploadInvoiceImage2"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.documenttypes'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: tag
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/uploadStatusSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /createSupportticket:
+    post:
+      summary: "createSupportticket"
+      operationId: "createSupportticket"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupportTicketBase'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportTicketSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /getUserSupportTickets?page={page}&count={count}:
+    get:
+      summary: "getUserSupportTickets"
+      operationId: "getUserSupportTickets"
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: count
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportTicketsSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /getSupportTicketEmails?ticket_id={ticket_id}:
+    get:
+      summary: "getSupportTicketEmails"
+      operationId: "getSupportTicketEmails"
+      parameters:
+        - name: ticket_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SupportTicketEmailSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /getAILearningRules:
+    post:
+      summary: "getAILearningRules"
+      operationId: "getAILearningRules"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LearningRuleRequest'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LearningRuleSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /addAttachedDocument?invoice_id={invoice_id}&attachment_id={attachment_id}:
+    get:
+      summary: "addAttachedDocument"
+      operationId: "addAttachedDocument"
+      parameters:
+        - name: invoice_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: attachment_id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /createSolution:
+    post:
+      summary: "createSolution"
+      operationId: "createSolution"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SolutionRequest'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /saveSolution?solution_id={solution_id}:
+    post:
+      summary: "saveSolution"
+      operationId: "saveSolution"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Solution'
+            examples:
+              default:
+                value:
+                  exampleField: 'example'
+      parameters:
+        - name: solution_id
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /getSolutions?page={page}&count={count}:
+    get:
+      summary: "getSolutions"
+      operationId: "getSolutions"
+      parameters:
+        - name: page
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: count
+          in: query
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
+  /reStoreSolution?solution_id={solution_id}&save_current_solution_changes={save_current_solution_changes}:
+    get:
+      summary: "reStoreSolution"
+      operationId: "reStoreSolution"
+      parameters:
+        - name: solution_id
+          in: query
+          required: true
+          schema:
+            type: integer
+        - name: save_current_solution_changes
+          in: query
+          required: true
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Servicestatus'
+              examples:
+                default:
+                  value:
+                    status: 'ok'
+
 components:
   schemas:
-    Customer:
-      required:
-        - city
-        - email
-        - fullName
-        - phone
+    Servicestatus:
       type: object
       properties:
-        id:
-          type: integer
-          format: int32
-        fullName:
-          maxLength: 100
-          minLength: 0
+        exampleField:
           type: string
-        email:
-          maxLength: 100
-          minLength: 0
-          type: string
-        phone:
-          maxLength: 100
-          minLength: 0
-          type: string
-        city:
-          maxLength: 100
-          minLength: 0
-          type: string
-      additionalProperties: false
-    WeatherForecast:
+    ContactDetails:
       type: object
       properties:
-        date:
+        exampleField:
           type: string
-          format: date
-        temperatureC:
-          type: integer
-          format: int32
-        temperatureF:
-          type: integer
-          format: int32
-          readOnly: true
-        summary:
+    PODetails:
+      type: object
+      properties:
+        exampleField:
           type: string
-          nullable: true
-      additionalProperties: false
+    PictureFileSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomerPictureFileSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceEngine.InvoicePayment:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    updateStatusSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceEngine.LearningRule:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    CustomerSettingsForm:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceEngine.PaymentState:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    uploadStatusSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceTableRow:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceEngine.FormData:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SettingsForm:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    ApproverDetails:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    RuleRow:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    UserDetails:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    Workflowstatus:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceRow:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    FormAndRows:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AICreatedSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AIPublishedWorkflowSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    AICreatedTask:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    InvoiceEngine.documenttypes:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SupportTicketSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SupportTicketBase:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SupportTicketsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SupportTicketEmailSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    LearningRuleSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    LearningRuleRequest:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SolutionWithWorkFlowsSS:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    SolutionRequest:
+      type: object
+      properties:
+        exampleField:
+          type: string
+    Solution:
+      type: object
+      properties:
+        exampleField:
+          type: string
