@@ -7,6 +7,8 @@ paths:
     post:
       summary: "addAllContacts"
       operationId: "addAllContacts"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -15,10 +17,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/ContactDetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -26,15 +25,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addContacts?target={target}:
+  /addContacts:
     post:
       summary: "addContacts"
       operationId: "addContacts"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -43,10 +45,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/ContactDetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -54,15 +53,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updateContacts?target={target}:
+  /updateContacts:
     post:
       summary: "updateContacts"
       operationId: "updateContacts"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -71,10 +73,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/ContactDetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -82,15 +81,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addPurchaseOrders?target={target}:
+  /addPurchaseOrders:
     post:
       summary: "addPurchaseOrders"
       operationId: "addPurchaseOrders"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -99,10 +101,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/PODetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -110,15 +109,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /appendPurchaseOrders?target={target}:
+  /appendPurchaseOrders:
     post:
       summary: "appendPurchaseOrders"
       operationId: "appendPurchaseOrders"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -127,10 +129,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/PODetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -138,25 +137,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /uploadInvoiceImage:
     post:
       summary: "uploadInvoiceImage"
       operationId: "uploadInvoiceImage"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -164,25 +163,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /uploadCustomerInvoiceImage:
     post:
       summary: "uploadCustomerInvoiceImage"
       operationId: "uploadCustomerInvoiceImage"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -190,25 +189,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /uploadMyCustomersCustomerInvoiceImage:
     post:
       summary: "uploadMyCustomersCustomerInvoiceImage"
       operationId: "uploadMyCustomersCustomerInvoiceImage"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CustomerPictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -216,15 +215,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /addInvoicePayment:
     post:
       summary: "addInvoicePayment"
       operationId: "addInvoicePayment"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -233,10 +235,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/InvoiceEngine.InvoicePayment'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -244,31 +243,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /uploadAppImage?name={name}:
+  /uploadAppImage:
     post:
       summary: "uploadAppImage"
       operationId: "uploadAppImage"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: name
           in: query
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -276,25 +275,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addWorkflowCSV?state={state}&workflowid={workflowid}&settings={settings}:
+  /addWorkflowCSV:
     post:
       summary: "addWorkflowCSV"
       operationId: "addWorkflowCSV"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: workflowid
           in: query
@@ -306,6 +298,13 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -313,25 +312,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/updateStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updateWorkflowCSV?invoiceid={invoiceid}&state={state}&workflowid={workflowid}&settings={settings}:
+  /updateWorkflowCSV:
     post:
       summary: "updateWorkflowCSV"
       operationId: "updateWorkflowCSV"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: invoiceid
           in: query
@@ -348,6 +340,13 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -355,31 +354,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/updateStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addLearningRule?invoiceid={invoiceid}:
+  /addLearningRule:
     post:
       summary: "addLearningRule"
       operationId: "addLearningRule"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/InvoiceEngine.LearningRule'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: invoiceid
-          in: query
-          required: true
-          schema:
-            type: integer
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -387,25 +386,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /saveCustomerSettings:
     post:
       summary: "saveCustomerSettings"
       operationId: "saveCustomerSettings"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/CustomerSettingsForm'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -413,25 +412,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updatePayment?UID={UID}&TID={TID}&target={target}&state={state}:
+  /updatePayment:
     post:
       summary: "updatePayment"
       operationId: "updatePayment"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceEngine.PaymentState'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: UID
           in: query
@@ -453,6 +445,13 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.PaymentState'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -460,25 +459,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /uploadPhoto:
     post:
       summary: "uploadPhoto"
       operationId: "uploadPhoto"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -486,25 +485,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /uploadPhotoReview:
     post:
       summary: "uploadPhotoReview"
       operationId: "uploadPhotoReview"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -512,25 +511,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /uploadPhotoWithNotes?notes={notes}&review={review}&locale={locale}:
+  /uploadPhotoWithNotes:
     post:
       summary: "uploadPhotoWithNotes"
       operationId: "uploadPhotoWithNotes"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: notes
           in: query
@@ -547,6 +539,13 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -554,15 +553,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveInvoiceRows?invoiceid={invoiceid}:
+  /saveInvoiceRows:
     post:
       summary: "saveInvoiceRows"
       operationId: "saveInvoiceRows"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -571,16 +579,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/InvoiceTableRow'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: invoiceid
-          in: query
-          required: true
-          schema:
-            type: integer
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -588,31 +587,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updateFormData?invoiceid={invoiceid}:
+  /updateFormData:
     post:
       summary: "updateFormData"
       operationId: "updateFormData"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceEngine.FormData'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: invoiceid
           in: query
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.FormData'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -620,25 +619,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updateFormDataTOK?token={token}&invoiceid={invoiceid}:
+  /updateFormDataTOK:
     post:
       summary: "updateFormDataTOK"
       operationId: "updateFormDataTOK"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceEngine.FormData'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: token
           in: query
@@ -650,6 +642,13 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.FormData'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -657,25 +656,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /saveMySettingsForm:
     post:
       summary: "saveMySettingsForm"
       operationId: "saveMySettingsForm"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SettingsForm'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -683,15 +682,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveApproverList?operation={operation}:
+  /saveApproverList:
     post:
       summary: "saveApproverList"
       operationId: "saveApproverList"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: operation
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -700,16 +708,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/ApproverDetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: operation
-          in: query
-          required: true
-          schema:
-            type: integer
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -717,27 +716,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /sendEmailWithAttachment?invoiceid={invoiceid}&emailto={emailto}&subject={subject}:
+  /sendEmailWithAttachment:
     post:
       summary: "sendEmailWithAttachment"
       operationId: "sendEmailWithAttachment"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: invoiceid
           in: query
@@ -754,6 +744,15 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -761,25 +760,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /startApp?name={name}&settings={settings}:
+  /startApp:
     post:
       summary: "startApp"
       operationId: "startApp"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PictureFileSS'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: name
           in: query
@@ -791,6 +783,13 @@ paths:
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PictureFileSS'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -798,15 +797,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /saveEmailRuleTable:
     post:
       summary: "saveEmailRuleTable"
       operationId: "saveEmailRuleTable"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
@@ -815,10 +817,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/RuleRow'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -826,25 +825,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /saveHQSettingsForm:
     post:
       summary: "saveHQSettingsForm"
       operationId: "saveHQSettingsForm"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SettingsForm'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -852,31 +851,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveHQUserSettings?name={name}:
+  /saveHQUserSettings:
     post:
       summary: "saveHQUserSettings"
       operationId: "saveHQUserSettings"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/SettingsForm'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: name
           in: query
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettingsForm'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -884,31 +883,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveHQUser?id={id}:
+  /saveHQUser:
     post:
       summary: "saveHQUser"
       operationId: "saveHQUser"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserDetails'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: id
           in: query
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDetails'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -916,15 +915,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveWorkflowSettings?workflowid={workflowid}:
+  /saveWorkflowSettings:
     post:
       summary: "saveWorkflowSettings"
       operationId: "saveWorkflowSettings"
+      tags:
+        - EzzyRest
       parameters:
         - name: workflowid
           in: query
@@ -943,15 +945,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Workflowstatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveInvoiceTableTOK?token={token}&invoiceid={invoiceid}:
+  /saveInvoiceTableTOK:
     post:
       summary: "saveInvoiceTableTOK"
       operationId: "saveInvoiceTableTOK"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: token
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -960,21 +976,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/InvoiceRow'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: token
-          in: query
-          required: true
-          schema:
-            type: string
-        - name: invoiceid
-          in: query
-          required: true
-          schema:
-            type: integer
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -982,31 +984,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /updateFormAndTable?invoiceid={invoiceid}:
+  /updateFormAndTable:
     post:
       summary: "updateFormAndTable"
       operationId: "updateFormAndTable"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: invoiceid
+          in: query
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/FormAndRows'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: invoiceid
-          in: query
-          required: true
-          schema:
-            type: integer
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1014,25 +1016,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addLearningRuleTOK?token={token}&invoiceid={invoiceid}:
+  /addLearningRuleTOK:
     post:
       summary: "addLearningRuleTOK"
       operationId: "addLearningRuleTOK"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceEngine.LearningRule'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: token
           in: query
@@ -1044,6 +1039,13 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.LearningRule'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1051,15 +1053,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /writeConsoleLog:
     post:
       summary: "writeConsoleLog"
       operationId: "writeConsoleLog"
+      tags:
+        - EzzyRest
       parameters:
         - name: note
           in: query
@@ -1073,15 +1078,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /createAIPrompts:
     post:
       summary: "createAIPrompts"
       operationId: "createAIPrompts"
+      tags:
+        - EzzyRest
       parameters:
         - name: prompt
           in: query
@@ -1095,15 +1103,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AICreatedSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /publishAIPrompt?name={name}:
+  /publishAIPrompt:
     post:
       summary: "publishAIPrompt"
       operationId: "publishAIPrompt"
+      tags:
+        - EzzyRest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -1112,16 +1129,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/AICreatedTask'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
-      parameters:
-        - name: name
-          in: query
-          required: true
-          schema:
-            type: string
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1129,15 +1137,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AIPublishedWorkflowSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /createAndPublishAIPromptTOK?token={token}:
+  /createAndPublishAIPromptTOK:
     post:
       summary: "createAndPublishAIPromptTOK"
       operationId: "createAndPublishAIPromptTOK"
+      tags:
+        - EzzyRest
       parameters:
         - name: token
           in: query
@@ -1156,15 +1167,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AIPublishedWorkflowSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /renameExternalTask?id={id}:
+  /renameExternalTask:
     post:
       summary: "renameExternalTask"
       operationId: "renameExternalTask"
+      tags:
+        - EzzyRest
       parameters:
         - name: id
           in: query
@@ -1183,31 +1197,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /uploadInvoiceImage2?doc_type={doc_type}&tag={tag}:
+  /uploadInvoiceImage2:
     post:
       summary: "uploadInvoiceImage2"
       operationId: "uploadInvoiceImage2"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InvoiceEngine.documenttypes'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: tag
           in: query
           required: true
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceEngine.documenttypes'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1215,25 +1229,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/uploadStatusSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /createSupportticket:
     post:
       summary: "createSupportticket"
       operationId: "createSupportticket"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SupportTicketBase'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1241,15 +1255,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SupportTicketSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /getUserSupportTickets?page={page}&count={count}:
+  /getUserSupportTickets:
     get:
       summary: "getUserSupportTickets"
       operationId: "getUserSupportTickets"
+      tags:
+        - EzzyRest
       parameters:
         - name: page
           in: query
@@ -1268,15 +1285,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SupportTicketsSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /getSupportTicketEmails?ticket_id={ticket_id}:
+  /getSupportTicketEmails:
     get:
       summary: "getSupportTicketEmails"
       operationId: "getSupportTicketEmails"
+      tags:
+        - EzzyRest
       parameters:
         - name: ticket_id
           in: query
@@ -1290,25 +1310,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SupportTicketEmailSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /getAILearningRules:
     post:
       summary: "getAILearningRules"
       operationId: "getAILearningRules"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/LearningRuleRequest'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1316,15 +1336,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LearningRuleSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /addAttachedDocument?invoice_id={invoice_id}&attachment_id={attachment_id}:
+  /addAttachedDocument:
     get:
       summary: "addAttachedDocument"
       operationId: "addAttachedDocument"
+      tags:
+        - EzzyRest
       parameters:
         - name: invoice_id
           in: query
@@ -1343,25 +1366,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
   /createSolution:
     post:
       summary: "createSolution"
       operationId: "createSolution"
+      tags:
+        - EzzyRest
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/SolutionRequest'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1369,31 +1392,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /saveSolution?solution_id={solution_id}:
+  /saveSolution:
     post:
       summary: "saveSolution"
       operationId: "saveSolution"
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Solution'
-            examples:
-              default:
-                value:
-                  exampleField: 'example'
+      tags:
+        - EzzyRest
       parameters:
         - name: solution_id
           in: query
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Solution'
+            example: { exampleField: 'sample' }
       responses:
         '200':
           description: Success
@@ -1401,15 +1424,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /getSolutions?page={page}&count={count}:
+  /getSolutions:
     get:
       summary: "getSolutions"
       operationId: "getSolutions"
+      tags:
+        - EzzyRest
       parameters:
         - name: page
           in: query
@@ -1428,15 +1454,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SolutionWithWorkFlowsSS'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
-  /reStoreSolution?solution_id={solution_id}&save_current_solution_changes={save_current_solution_changes}:
+  /reStoreSolution:
     get:
       summary: "reStoreSolution"
       operationId: "reStoreSolution"
+      tags:
+        - EzzyRest
       parameters:
         - name: solution_id
           in: query
@@ -1455,10 +1484,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Servicestatus'
-              examples:
-                default:
-                  value:
-                    status: 'ok'
+              example: { status: 'ok' }
+        '400':
+          description: Bad Request
+        '500':
+          description: Internal Server Error
 
 components:
   schemas:
